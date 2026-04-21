@@ -11,4 +11,3 @@
 #             print ("el alumno ha aprobado")
 #         else:
 #             print ("el alumno ha reprobado")
-            
