@@ -23,12 +23,15 @@ intentos=5
 while intentos > 0:
     adivina=int (input("ingrese un numero de 1 a 100:"))
     if adivina > num:
-        print (" te pasaste, intentos restantes:", intentos-1)
+        intentos -= 1
+        print (" te pasaste, intentos restantes:", intentos)
     elif adivina < num:
-        print (" el numero a adivinar es mayor , intentos restantes:", intentos-1)
+        intentos -= 1
+        print (" el numero a adivinar es mayor , intentos restantes:", intentos)
     else:
         print ("felicidades, has adivinado el numero !!, tus intentos restantes son:", intentos)
-    intentos-=1
+        break
 if intentos == 0:
     print (" lo siento, has agotado tus intentos, el numero era:", num)
-    
+
+    #arreglo en el codigo no se terminaba de ejecutar. se agrega break para detener la secuencia de codigo tras cumplir la condicion numerica 
