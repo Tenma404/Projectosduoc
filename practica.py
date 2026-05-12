@@ -12,6 +12,7 @@ vida2=100
 print (input("ingrese el nombre de su personaje "))
 
 while vida and vida2 !=0:
+    
     print ("te has encontrado con un enemigo")
     op=int(input("""ingrese la accion que desea hacer 
                  1-. Bola de fuego
@@ -20,7 +21,9 @@ while vida and vida2 !=0:
 
                  3.- Rayo magico
                  """) )
+    
     if op==1:
+
         vida2-=ataque_magico
         mana-=5
         print (f"has usado la bola de fuego,el enemigo pierde {ataque_magico} HP,le quedan{vida2} HP " )    
@@ -39,7 +42,7 @@ if op==3:
     time.sleep(1) 
     vida-=ataque_goblin
     print (f"has recibido {ataque_goblin} puntos de daño,te restan {vida} HP " )    
-    if vida>0:
+    if vida<0:
         print (f"has ganado, te restan {vida} HP y {mana} MP " )
-    if vida2>0:
+else:
         print ("has muerto... Deseas reinciar desde el checkpoint?")
