@@ -14,7 +14,7 @@ while True:
         if len(usuario)<=4 and  " " not in usuario and usuario.upper():
             print ("ingrese un nombre de usuario valido ")
     except ValueError: 
-        print ("solo se aceptan mas de 4 caracteres sin espacio y en mayuscula")
+        print ("ingrese valores alfabeticos, no de tipo entero ni decimal, intente nuevamente ")
     print ("ingrese la cantidad de juegos que desea registrar ")
     try:
         juegosn=int(input())
@@ -39,6 +39,7 @@ while True:
          print ("ingrese digitos decimales y positivos, intente nuevamente ")
     print ("ingrese la edad para clasificar los juegos")
     try:
+        
          edad=int (input(""))
          if edad<=0:
               print ("ingrese una edad valida")
