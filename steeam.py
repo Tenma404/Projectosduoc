@@ -24,7 +24,7 @@ while True:
              print ("solo se aceptan digitos enteros y positivos")
     print ("Ingrese el precio ")
     try:
-         precio=float (input())
+         precio=float (input("Ingrese el precio: "))
     
          if 20.000>precio<40.000:
               indie+=1
