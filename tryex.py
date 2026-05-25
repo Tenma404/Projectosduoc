@@ -49,16 +49,16 @@ if op==1:
     if op==2:
         while True:
             try:
-                print ("bienvenido al carrito ")
-                print (f"la cuenta a pagar es de {cuenta} ")
+                print ("ingrese el la clave secreta de su tarjeta para realizar la compra")
+                codigot=int(input("ingrese la clave de su tarjeta"))
+                if codigot==clavetarjeta:
+                    print ("se ha realizado con exito la compra")
+                    break
+                else:
+                    print ("has ingresado una clave incorrecta, intente de nuevo")
             except:
-                print ("solo se pueden ingresar valores numericos, intente nuevamente")
-            clave1=int(input("ingrese la clave de su tarjeta de credito para seguir"))
-            if clave1==clavetarjeta:
-                cuenta-=cuenta
-                print ("has pagado correctamente la cuenta del carrito")
-                break
-            else:
-                print ("clave incorrecta, intente nuevamente")
+                print ("solo se pueden ingresar numeros enteros, no decinmales ni alfabeticos, intente de nuevo")
+
         if op==3:
-            print (" has seleccionado salir,gracias por usar nuestra app ")
+            print ("has seleccionado salir,ten un buen dia y vuelva pronto ")
+            
