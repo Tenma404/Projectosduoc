@@ -26,9 +26,9 @@ print ("""
        7.-Salir
        """)
 
-op=int(input("ingrese la opcion que desea " ) )
 
 while True:
+    op=int(input)("ingrese una opcion")
     if op==1:
      print ("ingrese el nombre a guardar " )
      name=input("")
