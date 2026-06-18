@@ -19,7 +19,7 @@ Fodesa 12,5%
 
 '''
 
-def prevision ():
+def prev ():
     prev=int(input("Eliga su prevision 1 . Fonasa, 2 . Isapre, 3  Fodesa"))
     if prev==1:
         descuennto=25.000*54/100
@@ -35,9 +35,23 @@ def prevision ():
         
     
 
-
        
-
+def agregarpaciente():
+   nombre=input ("Ingrese el nombre del paciente ")
+   while len(nombre) <8  or nombre.isspace():
+       print ("ERROR EL SISTEMA NO ADMITE NOMBRES EN BLANCO O CON MENOS DE 8 CARACTERES INTENTE NUEVAMENTE")
+       nombre=input("ingrese el nombre del paciente nuevamente ")
+       prevision=input ("ingrese su prevision (Fonasa,Isapre,Fodesa)")
+       while prevision not in ["Fonasa","Isapre","Fodesa"]:
+           print ("La prevision debe ser una de las mostradas en pantalla, intente nuvamente")
+           prevision=input ("Ingrese su prevision (Isapre,Fonasa,Fodesa)")
+       temperatura=float(input("Ingrese la temperatura del paciente "))
+       grave=validarEstado(temperatura)
+       paciente={"nombre":nombre,"prevision":prevision,"temperatura":temperatura,"grave":grave}
+       pacientes.append(paciente)
+       print ("Paciente Agregado al Sistema Correctamente ")
+        
+       
 
 
 def validarEstado(tempe):
@@ -64,21 +78,17 @@ while True:
         op=int(input("Ingrese una opcion: "))
         match op:
             case 1:
-                nombre=input("Ingrese nombre: ")
-                prevision=input("Ingrese prevision: ")
-                temp=float(input("Ingrese temp: "))
-                pacientes.append({"nombre": nombre, "prevision": prevision, 
-                            "temperatura":temp, "grave": validarEstado(temp)})
-                print("Paciente agregado al listado")
+                agregarpaciente()
             case 2:
                 mostrarPacientes()
                 paci=int(input("Que paciente se vá?: "))
                 pacientes.pop(paci-1)
                 print("Paciente eliminado.")
             case 3:
-                print("")
+                mostrarPacientes()
+                
             case 4:
-                prevision()
+                prev()
                 
             case 5:
                 mostrarPacientes()
